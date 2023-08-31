@@ -9,7 +9,9 @@ function new-lecteur {
 	#>
 param([string]$chemin)
 $lettre=(65..90) | Get-Random -Count 1 | % {[char]$_}
-New-PSDrive -Root "$chemin" -Name "$lettre" -PSProvider "filesystem" -Persist
+if (test-path $chemin){
+	New-PSDrive -Root "$chemin" -Name "$lettre" -PSProvider "filesystem" -Persist
+	}
 }
 
 export-modulemember -Function 'new-lecteur'
