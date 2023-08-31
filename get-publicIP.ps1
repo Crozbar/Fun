@@ -5,7 +5,7 @@ function get-PublicIP {
 
    $uri = 'https://api.ipify.org'
    try {
-       #crée un customObject
+       #crée un hashtable
        $invokeRestIPify = @{
            Uri = $uri
            ErrorAction = "Stop"
