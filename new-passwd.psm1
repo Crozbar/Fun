@@ -8,7 +8,7 @@ function new-passwd {
     $secret = ConvertTo-SecureString -String (new-passwd) -AsPlainText -force
     #>
     param([string]$nombre=20)
-	-Join (((33..38)+(48..57)+(65..90)+(97..122)) | Get-Random -Count $nombre | % {[char]$_})
+	-Join (((33..38)+(48..57)+(65..90)+(97..122)) | Get-Random -Count $nombre | ForEach-Object {[char]$_})
 }
 
 export-modulemember -Function 'new-passwd'
