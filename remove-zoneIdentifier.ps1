@@ -12,7 +12,7 @@ Function Get-FileName($initialDirectory)
  $OpenFileDialog.filename
 }
 
-$ChosenFile = Get-FileName -initialDirectory $HOMEPATH
+$ChosenFile = Get-FileName -initialDirectory $HOME
 $streamArray = get-item $ChosenFile -Stream *
 if($streamArray.stream.Contains("Zone.Identifier")){
 	remove-item -path $ChosenFile -Stream "Zone.Identifier"
