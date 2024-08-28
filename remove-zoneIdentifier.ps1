@@ -1,5 +1,5 @@
-<#This script defines a function that gets a filename from the operator
-Then it checks for and removes the Zone.Identifier stream#>
+<#This script defines a function that gets a filename
+Then checks for and removes the Zone.Identifier stream#>
 Function Get-FileName($initialDirectory)
 {  
  [System.Reflection.Assembly]::LoadWithPartialName("System.windows.forms") |
